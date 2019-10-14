@@ -1,5 +1,7 @@
 package com.yolp900.spellies;
 
+import com.yolp900.spellies.blocks.ModBlocks;
+import com.yolp900.spellies.items.ModItems;
 import com.yolp900.spellies.proxy.ClientProxy;
 import com.yolp900.spellies.proxy.IProxy;
 import com.yolp900.spellies.proxy.ServerProxy;
@@ -48,12 +50,13 @@ public class Spellies {
     public static class RegistryEvents {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
-
+            ModBlocks.registerBlocks(event);
         }
 
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
-
+            ModBlocks.registerBlockItems(event);
+            ModItems.registerItems(event);
         }
     }
 
