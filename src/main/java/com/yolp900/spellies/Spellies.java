@@ -13,9 +13,12 @@ import net.minecraft.item.Items;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLPaths;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -27,7 +30,7 @@ public class Spellies {
     public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
 
     // Creative Tab
-    public static ItemGroup itemGroup = new ItemGroup("mcmod") {
+    public static ItemGroup itemGroup = new ItemGroup(MOD_ID) {
         @Override
         public ItemStack createIcon() {
             return new ItemStack(Items.ENCHANTED_BOOK);
@@ -37,9 +40,13 @@ public class Spellies {
     private static final Logger LOGGER = LogManager.getLogger();
 
     public Spellies() {
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.CLIENT_CONFIG);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_CONFIG);
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 
+        Config.loadConfig(Config.CLIENT_CONFIG, FMLPaths.CONFIGDIR.get().resolve("spellies-client.toml"));
+        Config.loadConfig(Config.COMMON_CONFIG, FMLPaths.CONFIGDIR.get().resolve("spellies-common.toml"));
     }
 
     private void setup(final FMLCommonSetupEvent event) {
@@ -48,6 +55,7 @@ public class Spellies {
 
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
+
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
             ModBlocks.registerBlocks(event);
@@ -58,6 +66,7 @@ public class Spellies {
             ModBlocks.registerBlockItems(event);
             ModItems.registerItems(event);
         }
+
     }
 
 }
