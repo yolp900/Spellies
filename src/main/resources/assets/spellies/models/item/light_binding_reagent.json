@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "spellies:item/light_binding_reagent"
+  }
+}

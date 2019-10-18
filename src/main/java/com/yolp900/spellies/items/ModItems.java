@@ -7,12 +7,16 @@ import net.minecraftforge.registries.ObjectHolder;
 
 public class ModItems {
 
-    @ObjectHolder(Spellies.MOD_ID + ":" + BindingReagentDarkItem.REGISTRY_NAME)
-    public static BindingReagentDarkItem BINDING_REAGENT_DARK;
+    @ObjectHolder(Spellies.MOD_ID + ":" + DarkBindingReagent.REGISTRY_NAME)
+    public static DarkBindingReagent DARK_BINDING_REAGENT;
+
+    @ObjectHolder(Spellies.MOD_ID + ":" + LightBindingReagent.REGISTRY_NAME)
+    public static LightBindingReagent LIGHT_BINDING_REAGENT;
 
     public static void registerItems(final RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(
-                new BindingReagentDarkItem().setRegistryName(BindingReagentDarkItem.REGISTRY_NAME)
+                new DarkBindingReagent().setRegistryName(DarkBindingReagent.REGISTRY_NAME),
+                new LightBindingReagent().setRegistryName(LightBindingReagent.REGISTRY_NAME)
         );
     }
 

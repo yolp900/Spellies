@@ -1,6 +1,8 @@
 {
   "_comment": "Creative Tab",
   "itemGroup.spellies": "Spellies",
+
   "_comment": "Items",
-  "item.spellies.binding_reagent_dark": "Dark Binding Reagent"
+  "item.spellies.dark_binding_reagent": "Dark Binding Reagent",
+  "item.spellies.light_binding_reagent": "Light Binding Reagent"
 }

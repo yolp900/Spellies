@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "spellies:item/binding_reagent_dark"
+    "layer0": "spellies:item/dark_binding_reagent"
   }
 }
