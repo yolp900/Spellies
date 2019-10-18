@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spellies:light_binding_reagent"
+    ]
+  },
+  "criteria": {
+    "light_binding_reagent": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:glowstone_dust"
+          },
+          {
+            "item": "minecraft:redstone"
+          },
+          {
+            "item": "minecraft:white_dye"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spellies:light_binding_reagent"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "light_binding_reagent",
+      "has_the_recipe"
+    ]
+  ]
+}
