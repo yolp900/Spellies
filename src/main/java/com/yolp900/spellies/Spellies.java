@@ -27,7 +27,7 @@ public class Spellies {
 
     public static final String MOD_ID = "spellies";
 
-    public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
+    public static IProxy proxy = DistExecutor.runForDist(() -> ClientProxy::new, () -> ServerProxy::new);
 
     // Creative Tab
     public static ItemGroup itemGroup = new ItemGroup(MOD_ID) {
@@ -45,8 +45,8 @@ public class Spellies {
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 
-        Config.loadConfig(Config.CLIENT_CONFIG, FMLPaths.CONFIGDIR.get().resolve("spellies-client.toml"));
-        Config.loadConfig(Config.COMMON_CONFIG, FMLPaths.CONFIGDIR.get().resolve("spellies-common.toml"));
+        Config.loadConfig(Config.CLIENT_CONFIG, FMLPaths.CONFIGDIR.get().resolve(MOD_ID + "-client.toml"));
+        Config.loadConfig(Config.COMMON_CONFIG, FMLPaths.CONFIGDIR.get().resolve(MOD_ID + "-common.toml"));
     }
 
     private void setup(final FMLCommonSetupEvent event) {
