@@ -4,5 +4,6 @@
 
   "_comment": "Items",
   "item.spellies.dark_binding_reagent": "Dark Binding Reagent",
-  "item.spellies.light_binding_reagent": "Light Binding Reagent"
+  "item.spellies.light_binding_reagent": "Light Binding Reagent",
+  "item.spellies.spell_parchment": "Spell Parchment"
 }

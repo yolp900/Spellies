@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "spellies:dark_binding_reagent",
+    "spellies:light_binding_reagent"
+  ]
+}

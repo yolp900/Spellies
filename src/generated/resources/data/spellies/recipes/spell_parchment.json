@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spellies.spell_parchment",
+  "pattern": [
+    " B ",
+    "PPP",
+    " B "
+  ],
+  "key": {
+    "B": {
+      "tag": "spellies:binding_reagent"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    }
+  },
+  "result": {
+    "item": "spellies:spell_parchment"
+  }
+}

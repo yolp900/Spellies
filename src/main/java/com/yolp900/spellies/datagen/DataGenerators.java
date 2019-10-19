@@ -11,6 +11,9 @@ public class DataGenerators {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
+        generator.addProvider(new ModBlockTagsProvider(generator));
+        generator.addProvider(new ModItemTagsProvider(generator));
+
         generator.addProvider(new ModRecipes(generator));
         generator.addProvider(new ModLootTables(generator));
     }

@@ -29,7 +29,6 @@ public class Spellies {
 
     public static IProxy proxy = DistExecutor.runForDist(() -> ClientProxy::new, () -> ServerProxy::new);
 
-    // Creative Tab
     public static ItemGroup itemGroup = new ItemGroup(MOD_ID) {
         @Override
         public ItemStack createIcon() {

@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spellies:spell_parchment"
+    ]
+  },
+  "criteria": {
+    "spell_parchment": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "spellies:light_binding_reagent"
+          },
+          {
+            "item": "minecraft:paper"
+          },
+          {
+            "item": "spellies:dark_binding_reagent"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spellies:spell_parchment"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "spell_parchment",
+      "has_the_recipe"
+    ]
+  ]
+}

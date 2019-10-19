@@ -13,10 +13,14 @@ public class ModItems {
     @ObjectHolder(Spellies.MOD_ID + ":" + LightBindingReagent.REGISTRY_NAME)
     public static LightBindingReagent LIGHT_BINDING_REAGENT;
 
+    @ObjectHolder(Spellies.MOD_ID + ":" + SpellParchment.REGISTRY_NAME)
+    public static SpellParchment SPELL_PARCHMENT;
+
     public static void registerItems(final RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(
                 new DarkBindingReagent().setRegistryName(DarkBindingReagent.REGISTRY_NAME),
-                new LightBindingReagent().setRegistryName(LightBindingReagent.REGISTRY_NAME)
+                new LightBindingReagent().setRegistryName(LightBindingReagent.REGISTRY_NAME),
+                new SpellParchment().setRegistryName(SpellParchment.REGISTRY_NAME)
         );
     }
 

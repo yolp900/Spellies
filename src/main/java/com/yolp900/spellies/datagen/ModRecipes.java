@@ -4,11 +4,9 @@ import com.yolp900.spellies.Spellies;
 import com.yolp900.spellies.items.DarkBindingReagent;
 import com.yolp900.spellies.items.LightBindingReagent;
 import com.yolp900.spellies.items.ModItems;
+import com.yolp900.spellies.items.SpellParchment;
 import net.minecraft.advancements.criterion.InventoryChangeTrigger;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.IFinishedRecipe;
-import net.minecraft.data.RecipeProvider;
-import net.minecraft.data.ShapelessRecipeBuilder;
+import net.minecraft.data.*;
 import net.minecraft.item.Items;
 import net.minecraftforge.common.Tags;
 
@@ -42,6 +40,16 @@ public class ModRecipes extends RecipeProvider {
                 .addIngredient(Tags.Items.DYES_WHITE)
                 .setGroup(Spellies.MOD_ID + "." + LightBindingReagent.REGISTRY_NAME)
                 .addCriterion(LightBindingReagent.REGISTRY_NAME, InventoryChangeTrigger.Instance.forItems(Items.GLOWSTONE_DUST, Items.REDSTONE, Items.WHITE_DYE))
+                .build(consumer);
+
+        ShapedRecipeBuilder.shapedRecipe(ModItems.SPELL_PARCHMENT)
+                .patternLine(" B ")
+                .patternLine("PPP")
+                .patternLine(" B ")
+                .key('B', ModItemTagsProvider.BINDING_REAGENT)
+                .key('P', Items.PAPER)
+                .setGroup(Spellies.MOD_ID + "." + SpellParchment.REGISTRY_NAME)
+                .addCriterion(SpellParchment.REGISTRY_NAME, InventoryChangeTrigger.Instance.forItems(ModItems.LIGHT_BINDING_REAGENT, Items.PAPER, ModItems.DARK_BINDING_REAGENT))
                 .build(consumer);
     }
 
