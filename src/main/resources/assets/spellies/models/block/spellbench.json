@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "top": "spellies:block/spellbench_top",
+    "side": "spellies:block/spellbench_side",
+    "bottom": "spellies:block/spellbench_bottom"
+  }
+}

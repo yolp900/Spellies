@@ -2,6 +2,9 @@
   "_comment": "Creative Tab",
   "itemGroup.spellies": "Spellies",
 
+  "_comment": "Blocks",
+  "block.spellies.spellbench": "Spellbench",
+
   "_comment": "Items",
   "item.spellies.dark_binding_reagent": "Dark Binding Reagent",
   "item.spellies.light_binding_reagent": "Light Binding Reagent",

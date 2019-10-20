@@ -1,5 +1,6 @@
 package com.yolp900.spellies.datagen;
 
+import com.yolp900.spellies.blocks.ModBlocks;
 import net.minecraft.data.DataGenerator;
 
 public class ModLootTables extends BaseLootTableProvider {
@@ -10,6 +11,6 @@ public class ModLootTables extends BaseLootTableProvider {
 
     @Override
     protected void addTables() {
-
+        lootTables.put(ModBlocks.SPELLBENCH, createStandardTable(ModBlocks.SPELLBENCH));
     }
 }

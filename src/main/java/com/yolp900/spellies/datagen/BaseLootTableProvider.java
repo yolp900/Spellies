@@ -36,7 +36,8 @@ public abstract class BaseLootTableProvider extends LootTableProvider {
         assert block.getRegistryName() != null;
         return LootPool.builder()
                 .name(block.getRegistryName().getPath())
-                .rolls(ConstantRange.of(1));
+                .rolls(ConstantRange.of(1))
+                .addEntry(ItemLootEntry.builder(block));
     }
 
 

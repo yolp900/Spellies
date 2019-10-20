@@ -62,8 +62,8 @@ public class Spellies {
 
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
-            ModBlocks.registerBlockItems(event);
             ModItems.registerItems(event);
+            ModBlocks.registerBlockItems(event);
         }
 
     }
