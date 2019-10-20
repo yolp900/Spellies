@@ -2,19 +2,19 @@
   "type": "minecraft:crafting_shaped",
   "group": "spellies.spell_parchment",
   "pattern": [
-    " L ",
+    " D ",
     "PPP",
-    " D "
+    " L "
   ],
   "key": {
-    "L": {
-      "tag": "spellies:light_binding_reagent"
-    },
     "P": {
       "item": "minecraft:paper"
     },
     "D": {
       "tag": "spellies:dark_binding_reagent"
+    },
+    "L": {
+      "tag": "spellies:light_binding_reagent"
     }
   },
   "result": {

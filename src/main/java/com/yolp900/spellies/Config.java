@@ -21,7 +21,16 @@ public class Config {
     static {
 
         COMMON_BUILDER.comment("General settings").push(CATEGORY_GENERAL);
+
+        // Add common config entries.
+
         COMMON_BUILDER.pop();
+
+        CLIENT_BUILDER.comment("General settings").push(CATEGORY_GENERAL);
+
+        // Add client config entries.
+
+        CLIENT_BUILDER.pop();
 
         COMMON_CONFIG = COMMON_BUILDER.build();
         CLIENT_CONFIG = CLIENT_BUILDER.build();
